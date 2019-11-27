@@ -1,9 +1,15 @@
 import pandas as pd
 from databases.connection import connector_mysql, create_table, create_sale
 
+
+# CONNECT TO DATABASE MYSQL
 mydb = connector_mysql()
+
+# CREATE TABLE SALES
 create_table()
 mycursor = mydb.cursor()
+
+# LOAD FILE  CSV
 data = pd.read_csv('sales_data_sample.csv', sep=";", encoding="latin1")
 data = data.fillna(0)
 
